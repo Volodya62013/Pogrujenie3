@@ -1,20 +1,165 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Погружение</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Илья — Капитан</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in { animation: fadeIn 1.2s ease-out forwards; opacity: 0; transform: translateY(20px); }
+    .fade-in-delay { animation: fadeIn 1.2s ease-out 0.3s forwards; opacity: 0; transform: translateY(20px); }
+    .fade-in-delay-2 { animation: fadeIn 1.2s ease-out 0.6s forwards; opacity: 0; transform: translateY(20px); }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-    <h1 id="prokachu">Прокачу и обучу ловить хариус.</h1>
+<body class="bg-slate-50 text-slate-900 antialiased">
 
-    <br>
-    <br>
-    <br>
-    <span>Ловлю хариус(короткие видео):</span>
-    <br>
-    <br>
-    <a href="https://vk.com/">Вконтакте</a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50 z-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+      <a href="#" class="text-sm font-semibold tracking-tight">Илья</a>
+      <div class="flex gap-4 sm:gap-8 text-xs sm:text-sm font-medium text-slate-500">
+        <a href="#about" class="hover:text-slate-900 transition-colors">О себе</a>
+        <a href="#services" class="hover:text-slate-900 transition-colors">Услуги</a>
+        <a href="#contact" class="hover:text-slate-900 transition-colors">Контакт</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="fade-in text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-widest mb-4">Капитан</p>
+      <h1 class="fade-in-delay text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-slate-900 mb-6">
+        Илья
+      </h1>
+      <p class="fade-in-delay-2 text-base sm:text-lg md:text-xl text-slate-500 font-light leading-relaxed max-w-xl mx-auto px-2 sm:px-0">
+        Прокачиваю людей на катере. Ветер, вода и свобода — это то, что я могу вам подарить.
+      </p>
+      <div class="fade-in-delay-2 mt-8 sm:mt-10">
+        <button onclick="openModal()" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-colors cursor-pointer">
+          Записаться на прокат
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 bg-white border-y border-slate-200/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="grid sm:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-light tracking-tight mb-3 sm:mb-4">О прогулках</h2>
+          <p class="text-slate-500 leading-relaxed mb-4 text-sm sm:text-base">
+            Провожу индивидуальные и групповые экскурсии на катере. Каждый выход в море — это уникальный маршрут, живописные виды и яркие эмоции.
+          </p>
+          <p class="text-slate-500 leading-relaxed text-sm sm:text-base">
+            На борту комфортно, безопасно и по-домашнему. Беру с собой до 5 человек. Люблю показывать то, что невозможно увидеть с берега.
+          </p>
+        </div>
+        <div class="bg-slate-100 rounded-2xl h-56 sm:h-80 flex items-center justify-center">
+          <span class="text-5xl sm:text-6xl">🌊</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xl sm:text-2xl font-light tracking-tight mb-8 sm:mb-10 text-center">Услуги</h2>
+      <div class="max-w-xl mx-auto space-y-4 sm:space-y-6">
+        <div class="group p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-300 transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1">
+            <h3 class="font-medium text-slate-900">Прогулка на катере</h3>
+            <span class="text-xs sm:text-sm text-slate-400">от 1 часа</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">Аренда катера с капитаном. Подберём маршрут под ваше настроение и погоду.</p>
+        </div>
+        <div class="group p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-300 transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1">
+            <h3 class="font-medium text-slate-900">Экскурсия по островам</h3>
+            <span class="text-xs sm:text-sm text-slate-400">2–6 часов</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">Маршруты по шхерам, высадка на острова, купание в открытой воде. Возьму с собой до 5 человек.</p>
+        </div>
+        <div class="group p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-300 transition-all">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-1">
+            <h3 class="font-medium text-slate-900">Закат / Романтическая прогулка</h3>
+            <span class="text-xs sm:text-sm text-slate-400">1.5–2 часа</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">Вечерний выход в море, лучшие виды на закат и тихая вода. Идеально для двоих или компании.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-xl sm:text-2xl font-light tracking-tight mb-4">Записаться</h2>
+      <p class="text-slate-400 mb-6 sm:mb-8 max-w-md mx-auto text-sm sm:text-base">
+        Напишите мне в Telegram или позвоните — обсудим дату, маршрут и детали.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <a href="#" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-slate-900 bg-white rounded-full hover:bg-slate-100 transition-colors w-full sm:w-auto">
+          Написать в Telegram
+        </a>
+        <button onclick="openModal()" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white border border-white/20 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto cursor-pointer">
+          Позвонить
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="phoneModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-3 sm:p-4" onclick="closeModal(event)">
+    <div class="relative bg-white rounded-2xl w-full max-w-sm p-6 sm:p-8 text-center shadow-2xl transform transition-all scale-95 opacity-0" id="modalContent">
+      <button onclick="closeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-slate-400 hover:text-slate-600 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="mb-2 text-3xl sm:text-4xl">📞</div>
+      <p class="text-slate-500 mb-6 text-sm leading-relaxed">позвоните по этому номеру телефона или поговорите с человеком на катере</p>
+      <a href="tel:89080266089" class="block text-xl sm:text-2xl font-semibold text-slate-900 tracking-tight mb-6">89080266089</a>
+      <button onclick="closeModal()" class="px-6 py-2 text-sm font-medium text-slate-500 border border-slate-200 rounded-full hover:bg-slate-50 transition-colors">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 border-t border-slate-800 bg-slate-900 text-slate-500 text-xs sm:text-sm text-center">
+    <p>© 2026 Илья. Капитан.</p>
+  </footer>
+
+  <script>
+    function openModal() {
+      const modal = document.getElementById('phoneModal');
+      const content = document.getElementById('modalContent');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+    function closeModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      const modal = document.getElementById('phoneModal');
+      const content = document.getElementById('modalContent');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }, 200);
+    }
+  </script>
+
 </body>
 </html>
